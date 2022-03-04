@@ -8,8 +8,13 @@ import CartItem from "./CartItem";
 const Cart = (props) => {
   const cartCTX = useContext(CartContext);
 
-  const cartItemAddHandler = id => {};
-  const cartItemRemoveHandler = item => {}
+  const cartItemAddHandler = item => {
+    cartCTX.addItem(item)
+  };
+
+  const cartItemRemoveHandler = id => {
+    cartCTX.removeItem(id);
+  }
 
   const cartItems = (
     <ul className={styles["cart-items"]}>
