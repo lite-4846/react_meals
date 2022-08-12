@@ -7,7 +7,7 @@ import styles from "./HeaderCartButton.module.css";
 const CartButton = (props) => {
   const [isBtnHigh, setIsBtnHigh] = useState(false);
   const cartCTX = useContext(CartContext);
-
+   
   const { items } = cartCTX;
 
   const numberOfCartItems = cartCTX.items.reduce((curNumber, item) => {
@@ -27,7 +27,7 @@ const CartButton = (props) => {
     }, 300);
 
     return () => {
-      clearTimeout(timer);3
+      clearTimeout(timer);
     };
   }, [items]);
 
